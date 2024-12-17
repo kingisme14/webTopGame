@@ -1,0 +1,29 @@
+/* 基本樣式 */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+/* 綠色方塊 */
+#greenBox {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    user-select: none; /* 禁止選中文字 */
+    transition: transform 0.1s ease-in-out;
+}
+
+/* 中間的數字 */
+#counter {
+    pointer-events: none; /* 防止數字干擾點擊事件 */
+}
