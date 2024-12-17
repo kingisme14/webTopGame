@@ -5,25 +5,77 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    background: linear-gradient(45deg, #4facfe, #00f2fe, #38ef7d, #11998e);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 15s infinite alternate;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 背景動畫 */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* 分數區塊 */
+#scoreBoard {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* 綠色方塊 */
 #greenBox {
-    width: 100px;
-    height: 100px;
-    background-color: green;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(34, 139, 34, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
     color: white;
     font-weight: bold;
-    user-select: none; /* 禁止選中文字 */
-    transition: transform 0.1s ease-in-out;
+    user-select: none;
+    transition: transform 0.1s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* 中間的數字 */
+/* 粉碎動畫 */
+.smash {
+    animation: smashEffect 0.5s forwards;
+}
+
+@keyframes smashEffect {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5) rotate(10deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 數字置中 */
 #counter {
-    pointer-events: none; /* 防止數字干擾點擊事件 */
+    pointer-events: none;
 }
