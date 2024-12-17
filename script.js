@@ -15,7 +15,7 @@ let isSmashing = false; // 是否正在執行粉碎動畫
 // 畫面震動功能
 function shakeScreen() {
     document.body.classList.add("shake");
-    setTimeout(() => document.body.classList.remove("shake"), 300);
+    setTimeout(() => document.body.classList.remove("shake"), 300); // 震動持續 300ms
 }
 
 // 粉碎效果
@@ -51,7 +51,7 @@ box.addEventListener("mousedown", () => {
     targetScale = 2;
     clickCount++;
     counter.textContent = clickCount;
-    shakeScreen();
+    shakeScreen(); // 每次點擊時震動畫面
 
     // 檢查是否達到粉碎門檻
     if (clickCount >= smashThreshold) {
